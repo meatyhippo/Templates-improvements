@@ -1,0 +1,26 @@
+/* Ruben Lightspeed support April 16, 2020 1:52 PM */
+/*to be changed per lang*/
+:lang(nl) {
+	--benaming-matrix: "Kleur";
+  --benaming-matrix2: "Maat";
+}
+:lang(fr) {
+	--benaming-matrix: "Couleur";
+  --benaming-matrix2: "Taille";
+}
+
+/*stay out*/
+@media screen /*variant attributes*/{
+div.product-configure-options-option > label {
+	visibility:hidden;
+}
+div.product-configure-options-option label[for$="color"]::before {
+  visibility: visible;
+  content:var(--benaming-matrix, "Color")!important;
+}
+div.product-configure-options-option label[for$="size"]::before {
+  visibility: visible;
+  content:var(--benaming-matrix2, "Size")!important;
+  }
+}
+/* END */

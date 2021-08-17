@@ -1,0 +1,16 @@
+          {% for variant in product.variants %}
+{% set show_attributes = false %}          
+    {% if show_attributes == true %}
+          {% set titleTrim = variant.title | split(',') %}
+          <li class="{% if variant.active %}active{% endif %} {% if not variant.stock.available %}disabled{% endif %}">
+            <a href="{{ (product.url~'?id='~variant.id) | url }}">{% if titleTrim[1] %}{{ titleTrim[0] | trim('\"') }}, {{ titleTrim[1] | trim('\"') }}
+              {% else %}{{ variant.title }}{% endif %}</a>
+          </li>
+          {% else %}
+           {% set titleTrim = variant.title | split(',') %}
+          <li class="{% if variant.active %}active{% endif %} {% if not variant.stock.available %}disabled{% endif %}">
+            <a href="{{ (product.url~'?id='~variant.id) | url }}">{% if titleTrim[1] %}{% set Splitting = titleTrim[0] | split(':') %}{{ Splitting[1] | trim('\"') }} / {% set Splitting = titleTrim[1] | split(':') %}{{ Splitting[1] | trim('\"') }}
+              {% else %}{{ variant.title }}{% endif %}</a>
+          </li>
+   {% endif %}
+          {% endfor %}

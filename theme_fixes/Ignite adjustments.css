@@ -1,0 +1,10 @@
+
+/* fixed header */
+@media (min-width:1024px) {
+	header.main-header {
+		position:fixed;
+	}
+	body > section:not([class]){
+		margin-top:104px;
+	}
+}
