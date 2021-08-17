@@ -1,0 +1,7 @@
+remove chrome print dialogue mac:
+defaults write com.google.Chrome DisablePrintPreview -bool true
+
+
+kiosk chrome windows:
+--kiosk-printing
+--disable-print-preview

@@ -1,0 +1,14 @@
+/* how to:
+1. open notepad and create new file;
+2. copy text from below in new file;
+3. save file as;
+4. give it the name: "Zebra Browser Print.bat" (.bat is crucial) and select "all files", not only .txt;
+5. save to desired location */
+
+//TEXT TO COPY:
+  
+@echo off
+cd "C:\Program Files (x86)\Zebra technologies\Zebra Browser Print"
+start BrowserPrint.exe
+start https://localhost:9101/available
+exit
