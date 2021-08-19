@@ -1,0 +1,6 @@
+discount rule jira
+{{ multiply(Line.displayableUnitPrice, Line.unitQuantity)|money }}
+
+with
+{# CLD-14286/20675 #}
+{{ (multiply(Line.unitPrice, Line.unitQuantity))|money }}
